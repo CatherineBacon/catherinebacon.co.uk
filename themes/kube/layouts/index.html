@@ -1,0 +1,29 @@
+{{ define "title"}} {{ .Site.Title}} {{end}}
+{{ define "header"}} {{ partial "header" .}} {{end}}
+{{ define "main"}}
+
+<div id="main">
+  <div id="hero">
+    <h1>{{.Title}}</h1>
+    <p>{{.Description}}</p>
+  </div>
+
+  <div id="kube-features">
+    <div class="row gutters">
+      {{ range .Site.Pages }}
+        {{ if and (eq .Type "blog") .IsPage }}
+          <div class="col col-4 item">
+            <figure>
+              <img alt="Baseline" height="48" src="/img/kube/icon-baseline.png" width="48">
+            </figure>
+            <h3>{{.Title}}</h3>
+            <p>{{.Description}}</p>
+          </div>
+        {{end}}
+      {{ end }}
+    </div>
+  </div>
+</div>
+</div>
+{{ end }}
+{{ define "footer"}} {{ partial "footer" .}} {{end}}
