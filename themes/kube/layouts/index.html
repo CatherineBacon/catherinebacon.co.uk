@@ -5,10 +5,17 @@
 <div id="main">
   <div id="hero">
     <h1>{{.Title}}</h1>
+    <img src={{.Site.Params.Image}} class="profile-pic"/>
     <p>{{.Description}}</p>
   </div>
 
-  <div id="kube-features">
+  <div class="row">
+    <div class="col col-12">
+      {{.Content}}
+    </div>
+  </div>
+
+  <!-- <div id="kube-features">
     <div class="row gutters">
       {{ range .Site.Pages }}
         {{ if and (eq .Type "blog") .IsPage }}
@@ -22,7 +29,7 @@
         {{end}}
       {{ end }}
     </div>
-  </div>
+  </div> -->
 </div>
 </div>
 {{ end }}

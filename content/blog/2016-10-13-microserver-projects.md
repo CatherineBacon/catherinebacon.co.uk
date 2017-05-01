@@ -2,7 +2,7 @@
 title:  "First Node projects"
 description: "Two microserver projects done!"
 date: "2016-10-13"
-path: "/blog/first-node-projects"
+slug: "first-node-projects"
 ---
 I've just completed the first two microserver node-based projects in the backend section of [FreeCodeCamp](https://www.freecodecamp.com). Woohoo!
 

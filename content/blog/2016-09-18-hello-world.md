@@ -1,9 +1,9 @@
 ---
 title:  "Hello World"
-linktitle: hello world
 description: My first coding blog post
 date: "2016-09-18"
 draft: false
+slug: hello-world
 ---
 
 
