@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Catherine Bacon</title>
+    <link>/</link>
+    <description>Recent content on Catherine Bacon</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Thu, 13 Oct 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>First Node projects</title>
+      <link>/blog/first-node-projects/</link>
+      <pubDate>Thu, 13 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/first-node-projects/</guid>
+      <description>I&amp;rsquo;ve just completed the first two microserver node-based projects in the backend section of FreeCodeCamp. Woohoo!
+Time stamp microserver Check out the first one here.
+When someone updates the url with either a unix time or a natural date (in the month day, year format) it returns the result in json as follows:
+{ &amp;quot;unix&amp;quot;: 1412985600000, &amp;quot;natural&amp;quot;: &amp;quot;October 11, 2014&amp;quot; }  I started by just trying to get the server to return the string from the url.</description>
+    </item>
+    
+    <item>
+      <title>LearnYouNode</title>
+      <link>/blog/learn-you-node/</link>
+      <pubDate>Sat, 01 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/learn-you-node/</guid>
+      <description>I&amp;rsquo;ve spent the last week working through the node.js section of FreeCodeCamp&amp;hellip;.
+Boy, am I confused.
+I don&amp;rsquo;t have a computer background and didn&amp;rsquo;t tinker with the things as a kid, so I didn&amp;rsquo;t really have a clue what a server was until last weekend!
+Now I have a slightly better idea. Slightly.
+I&amp;rsquo;d never really thougth about how a website works or what&amp;rsquo;s happening when you type a url&amp;hellip;you just kinda saw a web page&amp;hellip;that was it.</description>
+    </item>
+    
+    <item>
+      <title>Hello World</title>
+      <link>/blog/hello-world/</link>
+      <pubDate>Sun, 18 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/hello-world/</guid>
+      <description>title I started learning to code in spring 2016. Well, I say I started then, but I&amp;rsquo;d kinda dabbled before doing a little bit of python and html/css but never anything particularly serious or in-depth.
+What prompted me to start? Well, I&amp;rsquo;d been thinking I needed a change of career for some time, middle-management in an industry that didn&amp;rsquo;t inspire me didn&amp;rsquo;t feel like a great way to spend eight hours a day.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/about/</guid>
+      <description>about page coming soon&amp;hellip;</description>
+    </item>
+    
+  </channel>
+</rss>

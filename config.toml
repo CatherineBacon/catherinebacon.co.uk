@@ -4,6 +4,7 @@ title = "Catherine Bacon"
 theme = "kube"
 description = "Learning to code. <br/>Studying fullstack JavaScript web development.<br/>About to start a 12 week internship in June 2017."
 Paginate = 4
+publishDir = "docs"
 [Params]
   RSSLink = "/index.xml"
   author = "Catherine Bacon" # add your company name
