@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Portfolios on Catherine Bacon</title>
+    <link>/portfolio/</link>
+    <description>Recent content in Portfolios on Catherine Bacon</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Tue, 02 May 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/portfolio/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Book Exchange</title>
+      <link>/portfolio/book-app/</link>
+      <pubDate>Tue, 02 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/portfolio/book-app/</guid>
+      <description>Creating a book swapping app How I went about doing it
+Dictionaries/Frameworks List what I used</description>
+    </item>
+    
+  </channel>
+</rss>
