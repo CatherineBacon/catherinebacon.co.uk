@@ -2,3 +2,8 @@
   width: 200px;
   border-radius: 50%;
 }
+
+.portfolio-shot {
+  width: 400px;
+  margin: 5px;
+}

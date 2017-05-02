@@ -1,7 +1,7 @@
 +++
 title = ""
 description = ""
-url = ""
-github_link = ""
-image = ""
+siteurl = ""
+githublink = ""
+siteimage = ""
 +++

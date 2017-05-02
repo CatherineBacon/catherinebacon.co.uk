@@ -1,0 +1,32 @@
+{{ define "title"}} {{ .Title}} {{end}}
+{{ define "header"}} {{ partial "header" .}} {{end}}
+
+{{ define "main"}}
+<div class="push-center" itemscope itemtype="http://schema.org/BlogPosting">
+    {{ template "_internal/schema.html" . }}
+    <div id="hero">
+      <h1 itemprop="headline">  {{.Title}}</h1>
+      <img src={{.Params.siteimage}} class="portfolio-shot img-thumbnail"/>
+
+      {{ if .Description }}
+        <blockquote itemprop="description">{{ .Description }}</blockquote>
+        {{ end }}
+      </div>
+
+      <div id="post-box">
+        <div id="post" itemprop="articleBody">
+          <div class="row">
+            <div class="col col-6 text-center">
+              <a href={{.Params.githublink}}>Check out the code on GitHub</a>
+            </div>
+            <div class="col col-6 text-center">
+              <a href={{.Params.siteurl}}>See the full site.</a>
+            </div>
+          </div>
+          <br>
+          {{.Content | safeHTML}}
+        </div>
+      </div>
+</div>
+{{ end }}
+{{ define "footer"}} {{ partial "footer.html" .}} {{ end }}
