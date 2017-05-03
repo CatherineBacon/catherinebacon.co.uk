@@ -89,9 +89,11 @@
       <ul>
        
        
+    <li><a href="/about/" >About</a></li>
+    
     <li><a href="/blog/" >Blog</a></li>
     
-    <li><a href="/about/" >About</a></li>
+    <li><a href="/portfolio/" >Portfolio</a></li>
     
       </ul>
     </nav>
@@ -105,7 +107,7 @@
 
 
 <meta itemprop="dateModified" content="2017-05-02T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="16">
+<meta itemprop="wordCount" content="1028">
 
 
 
@@ -127,19 +129,68 @@
               <a href=https://github.com/CatherineBacon/booktradeextension>Check out the code on GitHub</a>
             </div>
             <div class="col col-6 text-center">
-              <a href=books.catherinebacon.co.uk>See the full site.</a>
+              <a href=http://books.catherinebacon.co.uk>See the full site.</a>
             </div>
           </div>
           <br>
           
 
-<h3 id="creating-a-book-swapping-app">Creating a book swapping app</h3>
+<h3 id="background">Background</h3>
 
-<p>How I went about doing it</p>
+<p>I&rsquo;ve been steadily working through the <a href="https://www.freecodecamp.com">FreeCodeCamp</a> (fcc) online bootcamp.
+This app started life as part of one of fcc&rsquo;s <a href="https://www.freecodecamp.com/challenges/manage-a-book-trading-club">backend projects</a>.
+However, my parents were intrigued by the site. They are members of a book club and so have a steady supply of books which they wouldn&rsquo;t necessarily have chosen to read and don&rsquo;t really want to keep. This is how my parents became my first &ldquo;clients&rdquo; and generated a list of requirements for them to use the site.</p>
 
-<h3 id="dictionaries-frameworks">Dictionaries/Frameworks</h3>
+<h3 id="creating-the-app">Creating the app</h3>
 
-<p>List what I used</p>
+<p>The original fcc challenge had a fairly limited set of user stories:</p>
+
+<ul>
+<li>I can view all books posted by every user.</li>
+<li>I can add a new book.</li>
+<li>I can update my settings to store my full name, city, and state.</li>
+<li>I can propose a trade and wait for the other user to accept the trade.</li>
+</ul>
+
+<h4 id="getting-started">Getting started</h4>
+
+<p>I wanted the site to update in real time as users added removed books without the page having to reload.
+<a href="https://guide.meteor.com/react.html">React</a> seemed a good choice for this as the page re-rendering would be taken care of for me. There also needed to be a database to store the books and user accounts. The database needed to link to update the React part of the site. I settled on <a href="https://www.meteor.com/">Meteor</a> to do this; it seemed to combine everything I was after; it could handle user accounts and a books database and can integrate with React.</p>
+
+<p>As this was my first time using Meteor I followed their <a href="https://www.meteor.com/tutorials/react/creating-an-app">React-Meteor tutorial</a> making adaptations along the way to fit the functionality I wanted in this app.</p>
+
+<h3 id="adding-some-polish">Adding some polish</h3>
+
+<p>Showing a list of books is fine, but I wanted something a little more engaging. So finding an api like <a href="https://github.com/smilledge/node-google-books-search">google-books-search</a> was fab - I could get information about a book (author, description) as well as a pretty picture. Having this in place meant it&rsquo;s what I used when adding the search functionality on the AllBooks page; the search request uses the same api and returns the first ten results. The search box is one of the things I added after speaking with my parents. You&rsquo;ll need to search, you know, for when the site is massive ;-)</p>
+
+<p>Once I had the site pretty much working (well at least fulfilling the user stories above), I decided it needing prettifying. In hindsight, I should have done this as I went along, but hey ho!</p>
+
+<p>One of the first things I did was to incorporate <a href="http://masonry.desandro.com/">masonry</a> to display the books and created the individual books panels. I then styled the app with <a href="https://react-bootstrap.github.io/">react-bootstrap</a> and the Flatly theme from <a href="https://bootswatch.com/">boostswatch</a>.</p>
+
+<p>Finally, I spent a long time trying to work out how to get the infinite scroll functionality of masonry to work. It took a bit of trial and error, but eventually worked out that it wasn&rsquo;t working, because the trigger was never appearing at the bottom of the page. A slight tweak of the margin parameter, and there you have it!</p>
+
+<h3 id="extending-the-project">Extending the project</h3>
+
+<p>At this point I had a basically functioning demo site. (One of the main downfalls was that nothing actually happened when users traded books!) Being proud of my work, I should it to my parents and it caught their imagination! After a weeks cogitation (and some pertinent questions) they gave me a list of additional functions that the site would need for them and their chums use it.</p>
+
+<p>The first thing to do was to add the ability to search for books and I mentioned above. Which I was pretty pleased with once I got it up and running.</p>
+
+<p>Up to this point users had been logging in with the standard accounts-ui form described in the meteor tutorial. It didn&rsquo;t fit the look of the rest of the site and I needed users addresses to facilitate the book trade, so I needed extra fields on each user account.</p>
+
+<p>I found I kept going round in circles with user accounts and was more than a little flummoxed with the meteor documentation on adding new fields to the sign up form. After much fiddling, I decided not include the address information on initial sign up, but on a separate profile page. Which meant a prettier sign-in form and a more straightforward method of changing an address.</p>
+
+<p>At this point I needed to think about subscriptions and publications. As it stood, all the books were being send to the client on the MyBooks page and I was filtering which to render. This worked ok with a small number of books, but the site would quickly become sluggish. the same is true for the AllBooks page (I may have only been displaying the first 10, but all the books were being subscribed to). The same was true for successful trades. To help improve the site&rsquo;s performance I added a variable to the publication/subscription which gave information on how many results to return. This initially caused me a bit of confusion, but once I understood that meteor and react acted separately, that there were meteor variables and the react state I started to see what was happening.</p>
+
+<p>Lastly, for the site to actually work, users needed to be notified when to trade and where to send the book. It would also be nice if they new when another user wanted one of their books. Meteor has a built in email system which was fairly straightforward to incorporate (although it took me a shamefully long time to realise it only ran on the server!). The trickiest part of the email part was getting it set up on heroku and mailgun. I needed some assisstance with this part&hellip;I found it very confusing about how to join all the services together.</p>
+
+<p>My parents have given me a longer list of requirements which I will continue to work through&hellip;.let&rsquo;s see if they can twist their friends arm into using the site!</p>
+
+<h3 id="libraries-frameworks">Libraries/Frameworks</h3>
+
+<p>I used <a href="https://www.meteor.com/">Meteor</a> as the platform. Combined with <a href="https://guide.meteor.com/react.html">React</a>. I also used <a href="https://github.com/ReactTraining/react-router/tree/master/packages/react-router">React Router</a> for the routing.
+List of book options and book cover image obtained from the <a href="https://github.com/smilledge/node-google-books-search">node google-books-search api</a>.
+It is styled with <a href="https://react-bootstrap.github.io/">react-bootstrap</a> and the Flatly theme from <a href="https://bootswatch.com/">boostswatch</a>.
+I also used <a href="https://github.com/furqanZafar/react-selectize">react-selectize</a> for the dropdown.</p>
 
         </div>
       </div>
@@ -154,6 +205,9 @@
         </li>
         <li>
           <a href="/blog/">Blog</a>
+        </li>
+        <li>
+          <a href="/porfolio/">Portfolio</a>
         </li>
       </ul>
     </nav>
