@@ -13,10 +13,14 @@ publishDir = "docs"
   image = "img/profile_pic.jpg"
 
 [[menu.main]]
+    name = "Portfolio"
+    weigth = -120
+    url = "/portfolio/"
+[[menu.main]]
     name = "Blog"
-    weight = -100
+    weight = -110
     url = "/blog/"
 [[menu.main]]
     name = "About"
-    weight = 100
+    weight = -200
     url = "/about/"
